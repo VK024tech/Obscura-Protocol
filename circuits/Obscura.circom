@@ -1,7 +1,8 @@
 pragma circom 2.1.6;
 
-include "circomlib/circuits/poseidon.circom";
+include "poseidon.circom";
 include "@zk-kit/binary-merkle-root.circom/src/binary-merkle-root.circom";
+
 
 
 template Withdraw(MAX_DEPTH){
@@ -16,15 +17,15 @@ template Withdraw(MAX_DEPTH){
     signal input nullifier;
 
     signal input recipient;
-    recipient < (1 << 160);
+    
     signal input relayer;
-    relayer < (1 << 160);
+    
     signal input relayerFee;
-    relayerFee < (1 << 128);
+   
 
     signal input chainId;
     signal input contractAddress;
-    contractAddress < (1 << 160);
+    
     
     signal input siblings[MAX_DEPTH];
     signal input index;
